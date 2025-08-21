@@ -134,8 +134,12 @@ button {
     grid-template-columns: 1fr 1fr;
 }
 .intro__gallery-item {
+
 }
 .intro__gallery-item img {
+    aspect-ratio: 1 / 1;  
+    object-fit: cover;
+    object-position: top;  
 }
 @media (min-width: 576px) {
     .intro__message {
@@ -148,6 +152,9 @@ button {
     }
     .intro__gallery {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .intro__gallery-item img {
+        aspect-ratio: unset;  
     }
 }
 
