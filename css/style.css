@@ -125,6 +125,22 @@ button {
     line-height: 136%;
     text-decoration: none;
 }
+.nav-control__count {
+    position: absolute;
+    right: -8px;
+    top: -4px;
+    background-color: #fff;
+    color: var(--primary);
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 132%;   
+}
 .nav-control__item_doc {
     display: none;
 }
@@ -132,6 +148,7 @@ button {
     display: none;
 }
 .nav-control__item_cart {
+    position: relative;
 }
 @media (min-width: 992px) {
     .header__burger {
@@ -177,15 +194,73 @@ button {
     position: absolute;
     top: 50px;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 40px);
     background-color: #fff;
     visibility: hidden;
     opacity: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    padding: 30px 15px;
     transition: opacity .25s ease;
 }
 .mob-menu_open {
     visibility: visible;
     opacity: 1;
+}
+.mob-menu__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+}
+.mob-menu__block {
+}
+.mob-menu__header {
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 146%;
+    margin-bottom: 15px;
+}
+.mob-menu__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.mob-menu__item {
+    color: var(--primary);    
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 132%;
+    text-decoration: none;
+}
+.footer-menu__nav {
+}
+.mob-menu__assistant {    
+}
+.mob-menu-assistant {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border);
+    text-decoration: none;     
+}
+.mob-menu-assistant__title {
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 132%;
+    width: 100%;
+    text-align: center;    
+}
+.mob-menu-assistant__icon {
+    width: 40px;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.88266 11.1774C7.47788 9.65985 11.0829 8.16564 14.6974 6.69492C19.8467 4.63534 20.5633 4.33472 21.2594 4.32422C21.5585 4.33365 21.8463 4.44065 22.0793 4.62898C22.3707 4.87766 22.4593 5.03515 22.4841 5.17386C22.507 5.31284 22.5048 5.74581 22.48 5.99255C22.201 8.81281 21.1416 15.3262 20.528 18.4885C20.2678 19.825 19.7555 20.2726 19.2598 20.3163C18.1838 20.4116 17.3659 19.6324 16.323 18.9734C14.6913 17.9433 14.146 17.5642 12.5639 16.5593C10.7317 15.3988 11.4855 14.9946 12.5286 13.9521C12.8013 13.6808 17.3246 9.53839 17.3926 9.16095C17.4505 8.82939 17.4714 8.78601 17.3227 8.6368C17.1718 8.4876 16.9922 8.50611 16.8766 8.53098C16.7113 8.56635 14.2204 10.1474 9.39962 13.2768C8.66019 13.7678 7.99098 14.0063 7.3898 13.9938C6.72885 13.9792 5.45461 13.6332 4.50863 13.3368C3.34565 12.972 2.42253 12.7814 2.50514 12.1638C2.54645 11.8425 3.00471 11.5131 3.88266 11.1774Z" fill="%23808285"/></svg>') no-repeat center center;
+    border-left: 1px solid var(--border);
+    flex-shrink: 0;    
 }
 /* #endregion mob-menu */
 
@@ -755,7 +830,6 @@ button {
 /* #endregion member */
 
 /* #region levels */
-/* fixes adaptive */
 .levels {
     margin-bottom: 80px;
 }
@@ -842,7 +916,7 @@ button {
 @media (min-width: 992px) {
     .levels-item {
         display: grid;
-        grid-template-columns: 1fr 248px;
+        grid-template-columns: 1fr 1fr;
         column-gap: 42px;
         padding: 23px 27px;    
     }
@@ -857,6 +931,9 @@ button {
     .levels-item__percent {
         margin-bottom: 0;
     }
+    .levels-item__img {
+        padding-left: 23px;
+    }
 }
 @media (min-width: 1400px) {
     .levels {
@@ -866,7 +943,7 @@ button {
         gap: 20px;
     }
     .levels-item {
-        grid-template-columns: 1fr 372px;
+        grid-template-columns: 1fr 1fr;
         column-gap: 66px;
         padding: 34px 40px;    
     }
@@ -883,6 +960,9 @@ button {
     }
     .levels-item__percent span {
         font-size: 88px;
+    }
+    .levels-item__img {
+        padding-left: 34px;
     }
 }
 /* #endregion levels */
@@ -1034,7 +1114,6 @@ button {
 /* #endregion brands */
 
 /* #region faq */
-/* fixes, adaptive 1400 */
 .faq {
     margin-bottom: 80px;
 }
@@ -1118,7 +1197,7 @@ button {
     .faq__wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: max-content 1fr;
     }
     .section-title {
     }
