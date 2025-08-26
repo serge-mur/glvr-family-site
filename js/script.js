@@ -15,5 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
             this.nextElementSibling.classList.toggle('faq__answer_show');
         });
     });
-    
+
+    const dropdown = document.querySelector('.dropdown');
+    const dropdownBtn = document.querySelector('.dropdown__button');
+    if (dropdown) {
+        dropdownBtn.addEventListener("click", () => {         
+            dropdown.classList.toggle('dropdown_open');
+        });              
+    }
+
 });
