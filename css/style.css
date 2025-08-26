@@ -85,9 +85,10 @@ button {
 }
 .header__wrapper {
     height: 50px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
     align-items: center;
-    justify-content: space-between;
 }
 .header__burger {
     width: 25px;
@@ -108,16 +109,18 @@ button {
 .nav-brands__item {
 }
 .header__logo {
+    justify-self: center;
 }
 .header__logo-img {
     max-height: 26px;
 }
 .header__nav-control {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    justify-self: end;
 }
 .nav-control {
+    display: flex;
+    align-items: center;
+    gap: 20px;    
 }
 .nav-control__item {
     display: flex;
